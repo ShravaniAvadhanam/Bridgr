@@ -183,7 +183,7 @@ const starterProjects: WorkspaceProject[] = [
 ];
 
 export function App() {
-  const [step, setStep] = useState<Step>(new URLSearchParams(location.search).get("reset") === "1" ? 1 : 4);
+  const [step, setStep] = useState<Step>(new URLSearchParams(location.search).get("skip") === "1" ? 4 : 1);
   const [role, setRole] = useState<Role>("Founder / PM");
   const [github, setGithub] = useState(false);
   const [githubRepo, setGithubRepo] = useState("ShravaniAvadhanam/Bridgr");
@@ -425,7 +425,7 @@ export function App() {
 
   if (step === 4) {
     return (
-      
+      <ReleasesContext.Provider value={releases}>
       <Platform
         view={view}
         setView={setView}
@@ -446,7 +446,7 @@ export function App() {
         focusSaved={focusSaved}
         projectNotice={projectNotice}
       />
-      
+      </ReleasesContext.Provider>
     );
   }
 
