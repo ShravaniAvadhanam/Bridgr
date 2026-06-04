@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.DS_Store
+*.tsbuildinfo
+.npm-cache/
+.impeccable/live/sessions/
+Bridgr-upload/
+
+# Local/generated screenshots
+bridgr-*.png
+impeccable-*.png
+!docs/bridgr-dashboard.png
+
+# Legacy static prototype files not used by the Vite app
+app.js
+styles.css
+server.js
